@@ -82,6 +82,10 @@ h2{
     display: block;
 }
 
+.page.meu-time .navgation.meu-time{
+    display: block;
+}
+
 .page.interna .welcome{
     display: none;
 }

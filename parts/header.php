@@ -21,6 +21,8 @@
                 echo 'class="page interna gerencia"';
             elseif($activePage === 'paymments'):
                 echo 'class="page interna pagamentos"';
+            elseif($activePage === 'meu-time'):
+                echo 'class="page interna meu-time"';
             endif;
 
             
@@ -50,6 +52,11 @@
                 <div class="row navgation pagamentos">
                     <div class="col-12">
                         <h1><a href="index.php"><i class="bi bi-arrow-left"></i></a> Pagamentos</h1>
+                    </div>
+                </div>
+                <div class="row navgation meu-time">
+                    <div class="col-12">
+                        <h1><a href="index.php"><i class="bi bi-arrow-left"></i></a> Meu Time</h1>
                     </div>
                 </div>
             </div>

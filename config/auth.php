@@ -25,11 +25,11 @@ $stmt->bindParam(':U_senha', $U_senhaHash);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// if (count($users) <= 0){
-//   	echo "<div><script>alert('Usuário ou Senha incorreto!');";
-//   	echo "javascript:window.location='../login.php';</script></div>";
-//   	exit;
-// }
+if (count($users) <= 0){
+  	echo "<div><script>alert('Usuário ou Senha incorreto!');";
+  	echo "javascript:window.location='../login.php';</script></div>";
+  	exit;
+}
 
 // pega o primeiro usuário
 $user = $users[0];

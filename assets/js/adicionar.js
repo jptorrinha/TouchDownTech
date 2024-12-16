@@ -5,6 +5,7 @@ var controller = {
     init: function() {
         this.AddUser();
         this.MaskInput();
+        this.AddTime();
     },
 
     AddUser: function() {
@@ -62,6 +63,58 @@ var controller = {
                                 $(".alert.alert-success").fadeOut();
                                 window.location.href = 'login.php';
                             }, 4000);
+                        } else if (output.status === "erroCat" || output.status === "erro") {
+                            $(".alert.alert-danger").show();
+                            $(".alert.alert-danger").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-danger").fadeOut();
+                            }, 5000);
+                        }
+                    }
+                });
+                return false;
+            }
+        });
+    },
+
+    AddTime: function() {
+        $("#addTime").validate({
+            rules: {
+                nome: {
+                    required: true
+                }
+            },
+            messages: {
+                nome: { required: "Obrigatório!" }
+            },
+            submitHandler: function(form, e) {
+                e.preventDefault();
+
+                var $form = $('.add-time');
+                var $inputs = $form.find("input, select, button, textarea");
+                var FormDados = new FormData(document.querySelector(".add-time"));
+                //$inputs.prop("disabled", true);
+
+                $.ajax({
+                    url: "query/time/adicionar.php",
+                    type: "POST",
+                    data: FormDados,
+                    async: false,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function(output) {
+                        console.log(output);
+
+                        $inputs.prop("disabled", false);
+
+                        if (output.status === "sucesso") {
+                            $(".alert.alert-success").show();
+                            $(".alert.alert-success").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-success").fadeOut();
+                                window.location.href = 'meu-time.php';
+                            }, 3000);
                         } else if (output.status === "erroCat" || output.status === "erro") {
                             $(".alert.alert-danger").show();
                             $(".alert.alert-danger").html(output.mensagem);

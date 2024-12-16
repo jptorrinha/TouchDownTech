@@ -1,5 +1,21 @@
-<?php include 'parts/header.php' ?>
+<?php 
+ini_set('display_errors', true);
+error_reporting(E_ALL);
+
+include 'config/init.php';
+
+if(isLoggedIn()):
+//abre a conexão
+$PDO = db_connect();
+//SQL para selecionar os registros
+$sql = "SELECT * FROM TEAMS ORDER BY team_id DESC";
+//seleciona os registros
+$stmt = $PDO->prepare($sql);
+$stmt->execute();
+$count = $stmt->rowCount();
+include 'parts/header.php' ?>
 <main>
+    <div class="container-fluid">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12">
@@ -19,4 +35,6 @@
         </div>
     </div>
 </main>
-<?php include 'parts/footer.php' ?>
+<?php 
+endif;
+include 'parts/footer.php' ?>
