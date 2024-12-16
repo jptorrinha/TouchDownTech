@@ -15,11 +15,10 @@ $erro = array(
 if(isset($_POST['nome'])){
 	//retorno formulário
 	$nome = $_POST['nome'];
-	$cargo = $_POST['cargo'];
 	$email = $_POST['email'];
 	$telefone = $_POST['telefone'];
 	$senha = $_POST['password'];
-	$perfil = $_POST['perfil'];
+	$perfil = $_POST['check_prefil'];
 	$id = create_guid(16);
 
 	$pw = make_hash($senha);
@@ -29,7 +28,6 @@ if(isset($_POST['nome'])){
 		$sql = "INSERT INTO USUARIOS (
 			U_id,
 			U_nome,
-			U_cargo,
 			U_email,
 			U_telefone,
 			U_perfil,
@@ -37,7 +35,6 @@ if(isset($_POST['nome'])){
 		) VALUES (
 			:U_id,
 			:U_nome,
-			:U_cargo,
 			:U_email,
 			:U_telefone,
 			:U_perfil,

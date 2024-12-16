@@ -5,8 +5,8 @@ require 'init.php';
 $PDO = db_connect();
 
 // resgata variáveis do formulário
-$U_email = isset($_POST['U_email']) ? $_POST['U_email'] : '';
-$U_senha = isset($_POST['U_senha']) ? $_POST['U_senha'] : '';
+$U_email = isset($_POST['email']) ? $_POST['email'] : '';
+$U_senha = isset($_POST['password']) ? $_POST['password'] : '';
 
 if (empty($U_email) || empty($U_senha)){
   	echo "<div><script>alert('Informe usuário e senha');";
@@ -25,11 +25,11 @@ $stmt->bindParam(':U_senha', $U_senhaHash);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if (count($users) <= 0){
-  	echo "<div><script>alert('Usuário ou Senha incorreto!');";
-  	echo "javascript:window.location='../login.php';</script></div>";
-  	exit;
-}
+// if (count($users) <= 0){
+//   	echo "<div><script>alert('Usuário ou Senha incorreto!');";
+//   	echo "javascript:window.location='../login.php';</script></div>";
+//   	exit;
+// }
 
 // pega o primeiro usuário
 $user = $users[0];

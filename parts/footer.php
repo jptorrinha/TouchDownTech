@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-6">
                     <div class="box-footer exit">
-                        <a href="#" class=""><i class="bi bi-box-arrow-right"></i><br>Sair</a>
+                        <a href="sair.php" class=""><i class="bi bi-box-arrow-right"></i><br>Sair</a>
                     </div>
                 </div>
             </div>
@@ -18,9 +18,10 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/additional-methods.min.js"></script>
 <script src="assets/js/jquery.maskedinput.min.js"></script>
-<script src="assetsjs/adicionar.js"></script>
+<script src="assets/js/adicionar.js"></script>
 </body>
 </html>

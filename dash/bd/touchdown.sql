@@ -55,7 +55,7 @@ CREATE TABLE `USUARIOS` (
   `U_nome` varchar(255) NOT NULL,
   `U_email` varchar(255) NOT NULL,
   `U_telefone` varchar(30) NOT NULL,
-  `u_perfil` set('1','2','3') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '1 - Admin, 2 - Treinador, 3 - Atleta',
+  `U_perfil` set('1','2','3') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '1 - Admin, 2 - Treinador, 3 - Atleta',
   `U_senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 

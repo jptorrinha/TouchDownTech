@@ -23,6 +23,8 @@
                 echo 'class="page interna pagamentos"';
             endif;
 
+            
+
         ?>
     >
         <header>
@@ -32,7 +34,7 @@
                 </div>
                 <div class="row welcome">
                     <div class="col-12">
-                        <h1>Bem vindo, XXXX</h1>
+                        <h1>Bem vindo, <?php $nome = $_SESSION['nome']; $name = explode(" ", $nome); echo $name[0]; ?></h1>
                     </div>
                 </div>
                 <div class="row navgation analise">

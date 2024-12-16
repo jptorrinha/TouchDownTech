@@ -22,7 +22,7 @@ var controller = {
                 password: {
                     required: true
                 },
-                perfil: {
+                check_prefil: {
                     required: true
                 }
             },
@@ -32,7 +32,7 @@ var controller = {
                 email: { required: "Obrigatório!" },
                 telefone: { required: "Obrigatório!" },
                 password: { required: "Obrigatório!" },
-                perfil: { required: "Obrigatório!"}
+                check_prefil: { required: "Obrigatório!"}
             },
             submitHandler: function(form, e) {
                 e.preventDefault();
@@ -60,8 +60,8 @@ var controller = {
                             $(".alert.alert-success").html(output.mensagem);
                             setTimeout(function() {
                                 $(".alert.alert-success").fadeOut();
-                                window.location.reload();
-                            }, 3000);
+                                window.location.href = 'login.php';
+                            }, 4000);
                         } else if (output.status === "erroCat" || output.status === "erro") {
                             $(".alert.alert-danger").show();
                             $(".alert.alert-danger").html(output.mensagem);
