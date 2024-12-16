@@ -102,7 +102,10 @@ h2{
     font-size: 26px;
     min-height: 135px;
 }
-.admin p, .interna p{
+.admin p, 
+.interna p,
+.couchs p,
+.player p{
     margin-top: 20px;
     font-size: 18px;
 }
