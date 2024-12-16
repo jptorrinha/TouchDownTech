@@ -1,0 +1,138 @@
+header h1{
+    display: none;
+    color: #000;
+    font-size: 25px;
+    padding: 20px 5px;
+}
+
+h2{
+    margin-top: 20px;
+}
+.logo{
+    text-align: center;
+    padding: 40px 0 10px 0;
+    margin-bottom: 20px;
+}
+.logo img{
+    width: 100%;
+    max-width: 300px;
+    display: inline-block;
+}
+
+.formulario-login p{
+    text-align: center;
+}
+.formulario-login p.cadastro{
+    text-align: left;
+    font-weight: bold;
+}
+
+.btn_padrao{
+    background-color: #3bdbc0;
+    color: #fff;
+    border-color: #3bdbc0;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.box-center{
+    text-align: center;
+}
+
+.link-primary{
+    color: #0ca088 !important;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #0ca088;
+    text-decoration: none;
+}
+
+.page header{
+    background-color: #0ca088;
+}
+
+.page header .logo{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.page header .logo img{
+    display: none;
+}
+
+.page header h1{
+    display: block;
+}
+
+.page.interna .navgation,
+.page.home .navgation{
+    display: none;
+}
+
+.page.analise .navgation.analise{
+    display: block;
+}
+
+.page.gerencia .navgation.gerenciar{
+    display: block;
+}
+
+.page.pagamentos .navgation.pagamentos{
+    display: block;
+}
+
+.page.interna .welcome{
+    display: none;
+}
+
+.list-payment{
+    margin-bottom: 6rem;
+}
+
+.box-buttons{
+    padding: 0 20px;
+}
+
+.navgation a{
+    color: #000;
+}
+
+.lk{
+    font-size: 26px;
+    min-height: 135px;
+}
+.admin p, .interna p{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: #ccc;
+    display: none;
+}
+
+.box-footer{
+    text-align: center;
+}
+
+.box-footer .help{
+    float: left;
+}
+.box-footer .exit{
+    float: right;
+}
+.box-footer a{
+    color: rgb(48, 48, 48);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.page footer{
+    display: block;
+}
