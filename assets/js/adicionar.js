@@ -6,6 +6,7 @@ var controller = {
         this.AddUser();
         this.MaskInput();
         this.AddTime();
+        this.AddPaymment();
     },
 
     AddUser: function() {
@@ -129,7 +130,73 @@ var controller = {
         });
     },
 
+    AddPaymment: function() {
+        $("#addPaymment").validate({
+            rules: {
+                paymment_date: {
+                    required: true
+                },
+                paymment_month: {
+                    required: true
+                },
+                paymment_value: {
+                    required: true
+                }
+            },
+            messages: {
+                paymment_date: { required: "Obrigatório!" },
+                paymment_month: { required: "Obrigatório!" },
+                paymment_value: { required: "Obrigatório!" }
+            },
+            submitHandler: function(form, e) {
+                e.preventDefault();
+
+                var $form = $('.add-paymment');
+                var $inputs = $form.find("input, select, button, textarea");
+                var FormDados = new FormData(document.querySelector(".add-paymment"));
+                //$inputs.prop("disabled", true);
+
+                $.ajax({
+                    url: "query/paymment/adicionar.php",
+                    type: "POST",
+                    data: FormDados,
+                    async: false,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function(output) {
+                        console.log(output);
+
+                        $inputs.prop("disabled", false);
+
+                        if (output.status === "sucesso") {
+                            $(".alert.alert-success").show();
+                            $(".alert.alert-success").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-success").fadeOut();
+                                window.location.href = 'pay-register.php';
+                            }, 3000);
+                        } else if (output.status === "erroCat" || output.status === "erro") {
+                            $(".alert.alert-danger").show();
+                            $(".alert.alert-danger").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-danger").fadeOut();
+                            }, 5000);
+                        }
+                    }
+                });
+                return false;
+            }
+        });
+    },
+
     MaskInput: function() {
         $("#telefone").mask("(99) 99999-9999");
+        $('#paymment_value').maskMoney({
+            prefix:'R$ ',
+            allowNegative: true,
+            thousands:'.', decimal:',',
+            affixesStay: true
+        });
     }
 }

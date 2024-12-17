@@ -21,7 +21,17 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/additional-methods.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
 <script src="assets/js/jquery.maskedinput.min.js"></script>
+<script src="assets/js/jquery.maskMoney.min.js"></script>
 <script src="assets/js/adicionar.js"></script>
+<script>
+    $("#datepicker").datepicker( {
+        format: "mm-yyyy",
+        viewMode: "years", 
+        minViewMode: "year",
+        autoclose: true
+    });
+</script>
 </body>
 </html>

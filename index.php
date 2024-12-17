@@ -99,7 +99,7 @@ include 'parts/header.php'
                 <div class="row mb-5">
                     <div class="col-12">
                         <div class="d-grid gap-2 box-buttons">
-                            <a href="gerencia.php" class="btn btn-outline-info btn-lg lk">
+                            <a href="pay-register.php" class="btn btn-outline-info btn-lg lk">
                                 <i class="bi bi-cash-coin"></i><br>Registrar pagamento de mensalidade
                             </a>
                         </div>

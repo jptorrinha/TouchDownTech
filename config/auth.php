@@ -34,10 +34,20 @@ if (count($users) <= 0){
 // pega o primeiro usuário
 $user = $users[0];
 
+$team_rel = $user['U_id'];
+
+$sqlTeam = "SELECT * FROM TEAMS WHERE team_rel = :team_rel";
+$stmtTeam = $PDO->prepare($sqlTeam);
+$stmtTeam->bindParam(':team_rel', $team_rel);
+$stmtTeam->execute();
+
+$idRel = $stmtTeam->fetch(PDO::FETCH_ASSOC);
+
 $_SESSION['logged_in'] = true;
 $_SESSION['id'] = $user['U_id'];
 $_SESSION['nome'] = $user['U_nome'];
 $_SESSION['email'] = $user['U_email'];
 $_SESSION['perfil'] = $user['U_perfil'];
+$_SESSION['relTime'] = $idRel['team_rel'];
 header('Location: ../index.php');
 ?>

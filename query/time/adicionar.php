@@ -23,18 +23,18 @@ if(isset($_POST['nome-time'])){
 		$sql = "INSERT INTO TEAMS (
 			team_id,
 			team_nome,
-			team_director
+			team_rel
 		) VALUES (
 			:team_id,
 			:team_nome,
-			:team_director
+			:team_rel
 		)";
 
 		//bind para o PDO Insert
 		$stmt = $PDO->prepare($sql);
 		$stmt->bindParam( ":team_id", $id );
 		$stmt->bindParam( ":team_nome", $nome );
-		$stmt->bindParam( ":team_director", $director );
+		$stmt->bindParam( ":team_rel", $director );
 		
 		if($stmt->execute()){
 			echo json_encode($sucesso);
