@@ -9,18 +9,28 @@ $team_rel = $_SESSION['id'];
 //abre a conexão
 $PDO = db_connect();
 //SQL para selecionar os registros
-$sql = "SELECT * FROM 
-          BILLINGS
-        INNER JOIN
-          TEAMS
-        INNER JOIN
-          USUARIOS
-        ON
-          (BILLINGS.team_rel = '$team_rel')
-        AND 
-          (USUARIOS.U_director = '$team_rel')
-        AND 
-          (TEAMS.team_rel = '$team_rel')";
+$sql = "SELECT 
+COUNT(*) AS CONTAGEM,
+  U.U_director,
+  U.U_nome,
+  U.U_email,
+  B.bill_reference,
+  U.U_id,
+  B.bill_date,
+  B.bill_id
+FROM BILLINGS AS B
+INNER JOIN USUARIOS AS U ON (U.U_director = B.team_rel)
+AND (B.team_rel = U.U_director)
+WHERE U.U_director = '$team_rel' AND U.U_id = B.bill_player_id
+GROUP BY 
+  U.U_director,
+  U.U_nome,
+  U.U_email,
+  B.bill_reference,
+  B.bill_date,
+  U.U_id,
+  B.bill_id
+ORDER BY B.bill_reference DESC";
           
 //seleciona os registros
 $stmt = $PDO->prepare($sql);
@@ -30,6 +40,8 @@ $stmtRell = $PDO->prepare($sql);
 $stmtRell->execute();
 $idRel = $stmtRell->fetch(PDO::FETCH_ASSOC);
 $count = $stmt->rowCount();
+
+;
 include 'parts/header.php' ?>
 <main>
   <div class="container-fluid">
@@ -43,7 +55,7 @@ include 'parts/header.php' ?>
     <div class="container">
       <div class="row mb-4">
         <div class="col-12">
-          <h2 class="text-center"><?php echo $idRel['team_nome']; ?></h2>
+          <h2 class="text-center"><?php echo $_SESSION['relTimeName']; ?></h2>
           <p>Confira meu histórico de pagamento</p>
         </div>
       </div>

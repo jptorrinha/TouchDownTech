@@ -44,6 +44,15 @@ if($user['U_perfil'] === '2' || $user['U_perfil'] === '3'){
 	$idRel = $stmtTeam->fetch(PDO::FETCH_ASSOC);
 	$_SESSION['relTime'] = $idRel['team_rel'];
 	$_SESSION['relTimeName'] = $idRel['team_nome'];
+}elseif($user['U_perfil'] === '1'){
+	$team_rel = $user['U_id'];
+	$sqlTeam = "SELECT * FROM TEAMS WHERE team_rel = :team_rel";
+	$stmtTeam = $PDO->prepare($sqlTeam);
+	$stmtTeam->bindParam(':team_rel', $team_rel);
+	$stmtTeam->execute();
+
+	$idRel = $stmtTeam->fetch(PDO::FETCH_ASSOC);
+	$_SESSION['relTimeName'] = $idRel['team_nome'];
 }
 
 
