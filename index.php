@@ -112,5 +112,7 @@ include 'parts/header.php'
   <?php endif; ?>
 </main>
 <?php 
+else:
+  header('Location: login.php');
 endif; 
 include 'parts/footer.php' ?>

@@ -1,4 +1,7 @@
-<?php include 'parts/header.php' ?>
+<?php 
+include 'config/init.php';
+if(isLoggedIn()):
+include 'parts/header.php' ?>
 <main>
     <div class="container-fluid">
         <div class="container">
@@ -28,4 +31,8 @@
         </div>
     </div>
 </main>
-<?php include 'parts/footer.php' ?>
+<?php 
+else:
+    header('Location: login.php');
+endif; 
+include 'parts/footer.php' ?>

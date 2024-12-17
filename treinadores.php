@@ -86,5 +86,7 @@ include 'parts/header.php' ?>
   </div>
 </main>
 <?php 
-endif;
+else:
+  header('Location: login.php');
+endif; 
 include 'parts/footer.php' ?>
