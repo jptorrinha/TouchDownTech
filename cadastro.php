@@ -1,7 +1,4 @@
-<?php 
-include 'config/init.php';
-if(isLoggedIn()):
-include 'parts/header.php' ?>
+<?php include 'parts/header.php' ?>
 <main class="login">
   <div class="container-fluid">
     <div class="container">
@@ -23,7 +20,7 @@ include 'parts/header.php' ?>
             <div class="mb-3">
               <label for="password" class="form-label">Senha</label>
               <input type="password" class="form-control" id="password" name="password">
-              <input type="hidden" class="form-control" id="U_perfil" name="U_perfil" value="1">
+              <input type="hidden" class="form-control" id="check_prefil" name="check_prefil" value="1">
             </div>
 
             <div class="mb-3 box-center">
@@ -46,8 +43,4 @@ include 'parts/header.php' ?>
     </div>
   </div>
 </main>
-<?php 
-else:
-  header('Location: login.php');
-endif; 
-include 'parts/footer.php' ?>
+<?php include 'parts/footer.php' ?>

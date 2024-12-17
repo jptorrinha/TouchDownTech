@@ -25,10 +25,12 @@ header h1{
 main{
     position: relative;
     top: 80px;
+    padding-bottom: 120px;
 }
 main.login{
     position: relative;
     top: 220px;
+    padding-bottom: 0;
 }
 
 h2{
