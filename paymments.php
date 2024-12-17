@@ -35,10 +35,6 @@ ORDER BY B.bill_reference DESC";
 //seleciona os registros
 $stmt = $PDO->prepare($sql);
 $stmt->execute();
-
-$stmtRell = $PDO->prepare($sql);
-$stmtRell->execute();
-$idRel = $stmtRell->fetch(PDO::FETCH_ASSOC);
 $count = $stmt->rowCount();
 
 ;
