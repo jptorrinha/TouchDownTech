@@ -1,5 +1,5 @@
 <?php include 'parts/header.php' ?>
-<main>
+<main class="login">
     <div class="container-fluid">
         <div class="container">
             <div class="row">
@@ -23,7 +23,7 @@
                         </div>
                         <div class="mb-3">
                             <p><a href="cadastro.php" class="link-primary">
-                                <b>Primeiro acesso</b>
+                                <b>Cadastre-se</b>
                             </a></p>
                         </div>
                     </div>

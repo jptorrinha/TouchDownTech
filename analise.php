@@ -1,5 +1,6 @@
 <?php include 'parts/header.php' ?>
 <main>
+    <div class="container-fluid">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12">

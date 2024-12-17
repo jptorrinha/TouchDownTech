@@ -1,5 +1,5 @@
 <?php include 'parts/header.php' ?>
-<main>
+<main class="login">
     <div class="container-fluid">
         <div class="container">
             <div class="row">
@@ -20,11 +20,16 @@
                         <div class="mb-3">
                             <label for="password" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="password" name="password">
-                            <input type="hudden" class="form-control" id="U_perfil" name="U_perfil" value="1">
+                            <input type="hidden" class="form-control" id="U_perfil" name="U_perfil" value="1">
                         </div>
                         
                         <div class="mb-3 box-center">
                             <button type="submit" class="btn btn-primary btn-lg btn_padrao">Cadastrar</button>
+                        </div>
+                        <div class="mb-3">
+                            <p><a href="login.php" class="link-primary">
+                                <b>Voltar</b>
+                            </a></p>
                         </div>
                         <div class="row">
                             <div class="col-md-12">

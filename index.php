@@ -63,7 +63,7 @@ include 'parts/header.php'
       <div class="row mb-5">
         <div class="col-12">
           <div class="d-grid gap-2 box-buttons">
-            <a href="ahttps://drive.google.com/drive/folders/1fjLV2JP2JVMdTlOPBVMDtECvX40K7TfM?usp=drive_link"
+            <a href="https://drive.google.com/drive/folders/1fjLV2JP2JVMdTlOPBVMDtECvX40K7TfM?usp=drive_link"
               class="btn btn-outline-info btn-lg lk">
               <i class="bi bi-graph-up-arrow"></i><br>Acessar minhas análises
             </a>

@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 include 'config/init.php';
 
 if(isLoggedIn()):
-$team_rel = $_SESSION['relTime'];
-$player_id = $_SESSION['id'];
+$team_rel = $_SESSION['id'];
 //abre a conexão
 $PDO = db_connect();
 //SQL para selecionar os registros
@@ -17,7 +16,9 @@ $sql = "SELECT * FROM
         INNER JOIN
           USUARIOS
         ON
-          (BILLINGS.bill_player_id = '$player_id')
+          (BILLINGS.team_rel = '$team_rel')
+        AND 
+          (USUARIOS.U_director = '$team_rel')
         AND 
           (TEAMS.team_rel = '$team_rel')";
           
@@ -50,8 +51,12 @@ include 'parts/header.php' ?>
         <div class="col-12">
           <ul class="list-group list-payment">
             <?php while ($bill = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-            <li class="list-group-item"><strong>Player: <?php echo $bill['U_nome']; ?></strong><br>
-              <hr><small>Mês de ref.: <?php echo $bill['bill_reference']; ?></small><br><small>#ID da Transação:<br><?php echo $bill['bill_id']; ?><br>Data do pagamento: <?php $date = $bill['bill_date']; echo date('d/m/Y',strtotime($date));?></small></li><br>
+            <li class="list-group-item">
+              <strong>Player: <?php echo $bill['U_nome']; ?></strong><br><hr>
+              <small>Mês de Ref.: <?php echo $bill['bill_reference']; ?></small><br>
+              <small>#ID da Transação:<br><?php echo $bill['bill_id']; ?><br>
+              Data do pagamento: <?php $date = $bill['bill_date']; echo date('d/m/Y',strtotime($date));?></small>
+            </li><br>
             <?php endwhile; ?>
           </ul>
         </div>

@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 include 'config/init.php';
 
 if(isLoggedIn()):
-$team_rel = $_SESSION['relTime'];
+$team_rel = $_SESSION['id'];
 //abre a conexão
 $PDO = db_connect();
 //SQL para selecionar os registros
@@ -50,7 +50,7 @@ include 'parts/header.php' ?>
                   </div>
                   <div class="mb-3 box-center">
                     <input type="hidden" class="form-control" id="director" name="director"
-                      value="<?php echo $_SESSION['relTime']; ?>">
+                      value="<?php echo $_SESSION['id']; ?>">
                     <input type="hidden" class="form-control" id="U_perfil" name="U_perfil" value="2">
                     <button type="submit" class="btn btn-primary btn-lg btn_padrao">Cadastrar Treinador</button>
                   </div>

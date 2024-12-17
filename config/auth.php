@@ -43,6 +43,7 @@ if($user['U_perfil'] === '2' || $user['U_perfil'] === '3'){
 
 	$idRel = $stmtTeam->fetch(PDO::FETCH_ASSOC);
 	$_SESSION['relTime'] = $idRel['team_rel'];
+	$_SESSION['relTimeName'] = $idRel['team_nome'];
 }
 
 
