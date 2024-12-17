@@ -90,6 +90,14 @@ h2{
     display: block;
 }
 
+.page.jogadores .navgation.jogadores{
+    display: block;
+}
+
+.page.treinadores .navgation.treinadores{
+    display: block;
+}
+
 .page.interna .welcome{
     display: none;
 }
@@ -159,4 +167,15 @@ select.ui-datepicker-year {
     width: 100%;
     height: 30px;
     display: block;
+}
+
+.accordion-header .accordion-button{
+    background-color: #ddd;
+}
+
+.accordion-header .accordion-button.collapsed{
+    background-color: #3bdbc0;
+}
+.accordion-button:focus{
+    box-shadow: none;
 }

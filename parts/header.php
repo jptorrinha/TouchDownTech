@@ -23,8 +23,12 @@
                 echo 'class="page interna pagamentos"';
             elseif($activePage === 'meu-time'):
                 echo 'class="page interna meu-time"';
-                elseif($activePage === 'pay-register'):
-                    echo 'class="page interna pay-register"';
+            elseif($activePage === 'pay-register'):
+                echo 'class="page interna pay-register"';
+            elseif($activePage === 'jogadores'):
+                echo 'class="page interna jogadores"';
+            elseif($activePage === 'treinadores'):
+                echo 'class="page interna treinadores"';
             endif;
 
             
@@ -58,12 +62,22 @@
                 </div>
                 <div class="row navgation meu-time">
                     <div class="col-12">
-                        <h1><a href="index.php"><i class="bi bi-arrow-left"></i></a> Meu Time</h1>
+                        <h1><a href="gerencia.php"><i class="bi bi-arrow-left"></i></a> Meu Time</h1>
                     </div>
                 </div>
                 <div class="row navgation pay-register">
                     <div class="col-12">
                         <h1><a href="index.php"><i class="bi bi-arrow-left"></i></a> Registrar Pagamento</h1>
+                    </div>
+                </div>
+                <div class="row navgation jogadores">
+                    <div class="col-12">
+                        <h1><a href="gerencia.php"><i class="bi bi-arrow-left"></i></a> Meus Jogadores</h1>
+                    </div>
+                </div>
+                <div class="row navgation treinadores">
+                    <div class="col-12">
+                        <h1><a href="gerencia.php"><i class="bi bi-arrow-left"></i></a> Meu Treinador</h1>
                     </div>
                 </div>
             </div>

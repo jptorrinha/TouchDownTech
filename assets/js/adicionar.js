@@ -7,6 +7,8 @@ var controller = {
         this.MaskInput();
         this.AddTime();
         this.AddPaymment();
+        this.AddCouch();
+        this.AddPlayer();
     },
 
     AddUser: function() {
@@ -176,6 +178,138 @@ var controller = {
                                 $(".alert.alert-success").fadeOut();
                                 window.location.href = 'pay-register.php';
                             }, 3000);
+                        } else if (output.status === "erroCat" || output.status === "erro") {
+                            $(".alert.alert-danger").show();
+                            $(".alert.alert-danger").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-danger").fadeOut();
+                            }, 5000);
+                        }
+                    }
+                });
+                return false;
+            }
+        });
+    },
+
+    AddCouch: function() {
+        $("#AddCouch").validate({
+            rules: {
+                nome_couch: {
+                    required: true
+                },
+                email_couch: {
+                    required: true
+                },
+                telefone_couch: {
+                    required: true
+                },
+                senha_couch: {
+                    required: true
+                }
+            },
+            messages: {
+                nome_couch: { required: "Obrigatório!" },
+                email_couch: { required: "Obrigatório!" },
+                telefone_couch: { required: "Obrigatório!" },
+                senha_couch: { required: "Obrigatório!" }
+            },
+            submitHandler: function(form, e) {
+                e.preventDefault();
+
+                var $form = $('.add-couch');
+                var $inputs = $form.find("input, select, button, textarea");
+                var FormDados = new FormData(document.querySelector(".add-couch"));
+                //$inputs.prop("disabled", true);
+
+                $.ajax({
+                    url: "query/treinador/adicionar.php",
+                    type: "POST",
+                    data: FormDados,
+                    async: false,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function(output) {
+                        console.log(output);
+
+                        $inputs.prop("disabled", false);
+
+                        if (output.status === "sucesso") {
+                            $(".alert.alert-success").show();
+                            $(".alert.alert-success").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-success").fadeOut();
+                                window.location.href = 'treinadores.php';
+                            }, 4000);
+                        } else if (output.status === "erroCat" || output.status === "erro") {
+                            $(".alert.alert-danger").show();
+                            $(".alert.alert-danger").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-danger").fadeOut();
+                            }, 5000);
+                        }
+                    }
+                });
+                return false;
+            }
+        });
+    },
+
+    AddPlayer: function() {
+        $("#AddPlayer").validate({
+            rules: {
+                nome_jogador: {
+                    required: true
+                },
+                email_jogador: {
+                    required: true
+                },
+                telefone_jogador: {
+                    required: true
+                },
+                link_jogador: {
+                    required: true
+                },
+                senha_jogador: {
+                    required: true
+                }
+            },
+            messages: {
+                nome_jogador: { required: "Obrigatório!" },
+                email_jogador: { required: "Obrigatório!" },
+                telefone_jogador: { required: "Obrigatório!" },
+                senha_jogador: { required: "Obrigatório!" },
+                link_jogador: { required: "Obrigatório!" }
+            },
+            submitHandler: function(form, e) {
+                e.preventDefault();
+
+                var $form = $('.add-player');
+                var $inputs = $form.find("input, select, button, textarea");
+                var FormDados = new FormData(document.querySelector(".add-player"));
+                //$inputs.prop("disabled", true);
+
+                $.ajax({
+                    url: "query/jogador/adicionar.php",
+                    type: "POST",
+                    data: FormDados,
+                    async: false,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function(output) {
+                        console.log(output);
+
+                        $inputs.prop("disabled", false);
+
+                        if (output.status === "sucesso") {
+                            $(".alert.alert-success").show();
+                            $(".alert.alert-success").html(output.mensagem);
+                            setTimeout(function() {
+                                $(".alert.alert-success").fadeOut();
+                                window.location.href = 'jogadores.php';
+                            }, 4000);
                         } else if (output.status === "erroCat" || output.status === "erro") {
                             $(".alert.alert-danger").show();
                             $(".alert.alert-danger").html(output.mensagem);

@@ -20,22 +20,9 @@
                         <div class="mb-3">
                             <label for="password" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="password" name="password">
+                            <input type="hudden" class="form-control" id="U_perfil" name="U_perfil" value="1">
                         </div>
-                        <div class="mb-3">
-                            <p class="cadastro">Selecione o perfil</p>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="radio" name="check_prefil" id="check_atleta" value="3">
-                                <label class="form-check-label" for="check_atleta">Atleta</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="radio" name="check_prefil" id="check_treinador" value="2">
-                                <label class="form-check-label" for="check_treinador">Treinador</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="radio" name="check_prefil" id="check_tcheck_diretor" value="1">
-                                <label class="form-check-label" for="check_diretor">Diretor</label>
-                            </div>
-                        </div>
+                        
                         <div class="mb-3 box-center">
                             <button type="submit" class="btn btn-primary btn-lg btn_padrao">Cadastrar</button>
                         </div>
