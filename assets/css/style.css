@@ -93,6 +93,10 @@ h2{
     display: block;
 }
 
+.page.interna .logo{
+    display: none;
+}
+
 .page.interna .navgation,
 .page.home .navgation{
     display: none;
@@ -147,7 +151,8 @@ h2{
     min-height: 135px;
     background-color: #0ca088;
     color: #fff;
-    border: 1px solid #0ca088
+    border: 1px solid #0ca088;
+    font-weight: bold;
 }
 .admin p, 
 .interna p,
